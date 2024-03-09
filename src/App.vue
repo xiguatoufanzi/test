@@ -129,7 +129,7 @@ function orderD(cart) {
       }
     }).then((res)=>{
       orderDetail.orderDetail = res.result
-      if (res.result.shop_list) {
+      if (res.result && res.result.shop_list) {
         startGo()
         // for (let index = 0; index < 10; index++) {
         // }
