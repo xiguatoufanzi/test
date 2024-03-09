@@ -80,7 +80,7 @@ function orderD(cart) {
   let item_list = cart.partitions[0].itemList.map((item,index)=>{
     return {
       "item_id": item.itemId, 
-      "quantity": "1", 
+      "quantity": item.count, 
       "price_type": "1", 
       "item_sku_id": item.skuId
     }
@@ -285,7 +285,7 @@ function startGo() {
       }
     }).then((res)=>{
       if (res.status.message != 'OK') {
-        getData()
+        startGo()
       }
     })
   
